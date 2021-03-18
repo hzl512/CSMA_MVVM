@@ -1,28 +1,20 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = "1.4.21"
-    repositories {
-        maven { url "https://maven.aliyun.com/repository/public" }
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        google()
-        jcenter()
-    }
+    // 注意：以下文件的声明顺序不能乱
+    apply from: 'mvvm-config.gradle'
+    apply from: 'MVVMArchitecture/config.gradle'
+    apply from: 'MVVMArchitecture/dependencies.gradle'
+
+    addRepository(repositories)
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.1"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath Deps.kotlinPlugin
+        classpath Deps.natigationSafeArgsPlugin
     }
 }
 
 allprojects {
-    repositories {
-        maven { url "https://maven.aliyun.com/repository/public" }
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        google()
-        jcenter()
-    }
+    addRepository(repositories)
 }
 
 task clean(type: Delete) {
