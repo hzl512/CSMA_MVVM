@@ -20,6 +20,12 @@
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.mason.cmsa.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_buying"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_mine"
+        android:name="com.mason.cmsa.ui.mine.MineFragment"
+        android:label="@string/title_mine"
+        tools:layout="@layout/fragment_mine" />
 </navigation>

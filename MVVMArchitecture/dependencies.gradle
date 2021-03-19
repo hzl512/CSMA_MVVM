@@ -121,12 +121,12 @@ ext {
  * @param handler repositories
  */
 static def addRepository(RepositoryHandler handler) {
-    handler.google()
+    handler.maven { url 'https://maven.aliyun.com/repository/public' }
     handler.maven { url 'https://maven.aliyun.com/repository/google' }
     handler.maven { url 'https://maven.aliyun.com/repository/jcenter' }
-    handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
     handler.maven { url "https://www.jitpack.io" }
     handler.maven { url "https://dl.bintray.com/tencentqcloudterminal/maven" }
+    handler.google()
     handler.mavenCentral()
 }
 
