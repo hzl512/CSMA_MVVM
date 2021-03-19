@@ -12,16 +12,16 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.mason.cmsa.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_category"
+        android:name="com.mason.cmsa.ui.category.CategoryFragment"
+        android:label="@string/title_category"
+        tools:layout="@layout/fragment_category" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.mason.cmsa.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_buying"
+        android:name="com.mason.cmsa.ui.buying.BuyingFragment"
         android:label="@string/title_buying"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_buying" />
 
     <fragment
         android:id="@+id/navigation_mine"

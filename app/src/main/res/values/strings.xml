@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">跳蚤市场</string>
     <string name="title_home">首页</string>
-    <string name="title_dashboard">分类</string>
+    <string name="title_category">分类</string>
     <string name="title_buying">求购</string>
     <string name="title_mine">我的</string>
 </resources>

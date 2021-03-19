@@ -1,4 +1,4 @@
-package com.mason.cmsa.ui.dashboard
+package com.mason.cmsa.ui.category
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.mason.cmsa.R
 
-class DashboardFragment : Fragment() {
+class CategoryFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var categoryViewModel: CategoryViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        categoryViewModel =
+                ViewModelProviders.of(this).get(CategoryViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_category, container, false)
         val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
+        categoryViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

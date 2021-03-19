@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.mason.cmsa.R
-import com.mason.cmsa.ui.notifications.NotificationsViewModel
 
 class MineFragment : Fragment() {
 

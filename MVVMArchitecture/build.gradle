@@ -184,8 +184,8 @@ dependencies {
     }
 
     // debug 阶段内存泄露检测
-    checkMVVMConfigProperty(IncludeLib.leakCanary2, "leakCanary2")
-    if (IncludeLib.leakCanary2) {
-        debugImplementation Deps.leakCanary2
-    }
+//    checkMVVMConfigProperty(IncludeLib.leakCanary2, "leakCanary2")
+//    if (IncludeLib.leakCanary2) {
+//        debugImplementation Deps.leakCanary2
+//    }
 }
