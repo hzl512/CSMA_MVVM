@@ -1,6 +1,19 @@
-include ':lib_common_base'
 include ':app'
 rootProject.name = "CSMA_MVVM"
+
+//业务模块
+include ':mine'
+project(':mine').projectDir = new File('business/mine')
+
+include ':category'
+project(':category').projectDir = new File('business/category')
+
+include ':home'
+project(':home').projectDir = new File('business/home')
+
+include ':buying'
+project(':buying').projectDir = new File('business/buying')
+
 
 //公共基础模块
 include ':lib_common_base'
