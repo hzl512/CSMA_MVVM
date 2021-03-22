@@ -14,10 +14,11 @@ project(':home').projectDir = new File('business/home')
 include ':buying'
 project(':buying').projectDir = new File('business/buying')
 
-
 //公共基础模块
 include ':lib_common_base'
 project(':lib_common_base').projectDir = new File('submodule/lib_common_base')
+include ':lib_common_opensource'
+project(':lib_common_opensource').projectDir = new File('submodule/lib_common_opensource')
 
 //MVVM模块
 include ':MVVMArchitecture'

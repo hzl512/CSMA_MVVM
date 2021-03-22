@@ -63,6 +63,28 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    api project(':lib_common_base')
+    //原生框架的官方支持库
+    api Deps.material
+    api Deps.constraintLayout
+    api Deps.vectordrawable
+    api Deps.natigationFragment
+    api Deps.natigationUi
+    api Deps.lifecycleExtensions
+    api Deps.natigationFragmentKTX
+    api Deps.natigationUiKTX
+
+    // 以下是框架没有封装过的库，只是将具体的地址放到了 MVVMArchitecture/dependencies.gradle 文件中，需要的话，自行引入
+    api Deps.bindingAdapter
+    api Deps.natigationFragmentKTX
+    api Deps.bindingAdapter
+    api Deps.bindingAdapter
+    api Deps.bindingAdapterKTX
+    api Deps.bindingAdapterRv
+    api Deps.bindingAdapterVp2
+
+    // 源码方式引用框架
+    api project(path: ':MVVMArchitecture')
+    // 如果你用到 room，需要声明注解处理器，否则无法使用的。
+    kapt Deps.roomCompiler
 
 }
