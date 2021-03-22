@@ -1,5 +1,10 @@
+include ':lib_common_base'
 include ':app'
 rootProject.name = "CSMA_MVVM"
+
+//公共基础模块
+include ':lib_common_base'
+project(':lib_common_base').projectDir = new File('submodule/lib_common_base')
 
 //MVVM模块
 include ':MVVMArchitecture'
