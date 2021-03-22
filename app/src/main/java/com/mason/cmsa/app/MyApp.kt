@@ -1,9 +1,12 @@
 package com.mason.cmsa.app
 
+import com.alibaba.android.arouter.launcher.ARouter
+import com.blankj.utilcode.util.AppUtils
 import com.imyyq.mvvm.app.AppStateTracker
 import com.imyyq.mvvm.app.BaseApp
 import com.imyyq.mvvm.app.GlobalConfig
 import com.imyyq.mvvm.http.HttpRequest
+import com.imyyq.mvvm.utils.AppUtil
 import com.imyyq.mvvm.utils.LogUtil
 import com.mason.cmsa.R
 
@@ -84,5 +87,16 @@ class MyApp : BaseApp() {
                 LogUtil.i("MyApp", "commonLog - appTurnIntoBackground: ")
             }
         })
+        initARouter()
     }
+
+    private fun initARouter() {
+        if (AppUtils.isAppDebug()) {
+            //开启InstantRun之后，一定要在ARouter.init之前调用openDebug
+            ARouter.openDebug()
+            ARouter.openLog()
+        }
+        ARouter.init(this)
+    }
+
 }

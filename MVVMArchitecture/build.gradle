@@ -194,4 +194,11 @@ dependencies {
     api Deps.smartRefreshLayoutHeader
     api Deps.smartRefreshLayoutFooter
 
+    // router
+    api Deps.router
+
+    // utilCodex
+    api Deps.utilCodex
+
+
 }

@@ -110,7 +110,16 @@ ext {
             //SmartRefreshLayout 刷新组件
             smartRefreshLayoutKernel : "com.scwang.smart:refresh-layout-kernel:2.0.3",      //核心必须依赖
             smartRefreshLayoutHeader : "com.scwang.smart:refresh-header-classics:2.0.3",    //经典刷新头
-            smartRefreshLayoutFooter : "com.scwang.smart:refresh-footer-classics:2.0.3"    //经典加载
+            smartRefreshLayoutFooter : "com.scwang.smart:refresh-footer-classics:2.0.3",    //经典加载
+
+            //router
+            // 替换成最新版本, 需要注意的是api
+            // 要与compiler匹配使用，均使用最新版可以保证兼容
+            "router"                 : "com.alibaba:arouter-api:1.5.1",
+            "router-compiler"        : "com.alibaba:arouter-compiler:1.5.1",
+
+            //https://github.com/Blankj/AndroidUtilCode/blob/master/lib/utilcode/README-CN.md
+            utilCodex                : "com.blankj:utilcodex:1.30.6",
 
     ]
 
