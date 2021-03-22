@@ -70,14 +70,15 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
-    implementation 'androidx.navigation:navigation-fragment:2.3.0'
-    implementation 'androidx.navigation:navigation-ui:2.3.0'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
+    //原生框架的官方支持库
+    implementation Deps.material
+    implementation Deps.constraintLayout
+    implementation Deps.vectordrawable
+    implementation Deps.natigationFragment
+    implementation Deps.natigationUi
+    implementation Deps.lifecycleExtensions
+    implementation Deps.natigationFragmentKTX
+    implementation Deps.natigationUiKTX
 
     // 以下是框架没有封装过的库，只是将具体的地址放到了 MVVMArchitecture/dependencies.gradle 文件中，需要的话，自行引入
     implementation Deps.bindingAdapter
