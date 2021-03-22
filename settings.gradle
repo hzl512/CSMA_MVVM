@@ -1,3 +1,6 @@
 include ':app'
 rootProject.name = "CSMA_MVVM"
+
+//MVVM模块
 include ':MVVMArchitecture'
+project(':MVVMArchitecture').projectDir = new File('submodule/MVVMArchitecture')

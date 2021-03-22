@@ -33,7 +33,7 @@ class MyApp : BaseApp() {
     override fun onMainProcessInit() {
 
         // 网络请求需设置 baseUrl，更多使用详见该类方法
-        HttpRequest.mDefaultBaseUrl = "https://www.wanandroid.com/"
+        HttpRequest.mDefaultBaseUrl = "http://pc-huangzonglei.nflg:8090/CampusSecondaryMarket/"
 
         // 初始化 LoadSir，内嵌加载中第三方库，框架对其进行了二次封装
 //        GlobalConfig.initLoadSir(
