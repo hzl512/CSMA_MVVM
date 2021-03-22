@@ -188,4 +188,10 @@ dependencies {
 //    if (IncludeLib.leakCanary2) {
 //        debugImplementation Deps.leakCanary2
 //    }
+
+    // SmartRefreshLayout 刷新组件
+    api Deps.smartRefreshLayoutKernel
+    api Deps.smartRefreshLayoutHeader
+    api Deps.smartRefreshLayoutFooter
+
 }
