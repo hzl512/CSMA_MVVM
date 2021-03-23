@@ -1,4 +1,4 @@
-package com.mason.cmsa.ui.home
+package com.mason.csma.home.frags
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

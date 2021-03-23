@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.mason.cmsa.ui.home.HomeFragment"
+        android:name="com.mason.csma.home.frags.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 

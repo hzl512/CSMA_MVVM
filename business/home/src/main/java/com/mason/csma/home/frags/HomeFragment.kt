@@ -1,17 +1,13 @@
-package com.mason.cmsa.ui.home
+package com.mason.csma.home.frags
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.TextView
-import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.imyyq.mvvm.utils.ToastUtil
-import com.mason.cmsa.R
+import com.mason.csma.home.R
 
 
 class HomeFragment : Fragment() {

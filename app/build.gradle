@@ -89,6 +89,8 @@ dependencies {
     implementation Deps.bindingAdapterRv
     implementation Deps.bindingAdapterVp2
 
+    implementation project(path: ':home')
+
     // 源码方式引用框架
     implementation project(path: ':MVVMArchitecture')
     // 如果你用到 room，需要声明注解处理器，否则无法使用的。
