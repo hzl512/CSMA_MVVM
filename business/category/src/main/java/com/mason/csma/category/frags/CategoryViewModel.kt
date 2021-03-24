@@ -1,13 +1,13 @@
-package com.mason.cmsa.ui.buying
+package com.mason.csma.category.frags
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class BuyingViewModel : ViewModel() {
+class CategoryViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "求购"
+        value = "分类"
     }
     val text: LiveData<String> = _text
 }

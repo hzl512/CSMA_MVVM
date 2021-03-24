@@ -1,4 +1,4 @@
-package com.mason.cmsa.ui.category
+package com.mason.csma.category.frags
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.mason.cmsa.R
+import com.mason.csma.category.R
 
 class CategoryFragment : Fragment() {
 

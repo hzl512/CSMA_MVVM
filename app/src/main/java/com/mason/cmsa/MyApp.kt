@@ -1,4 +1,4 @@
-package com.mason.cmsa.app
+package com.mason.cmsa
 
 import com.alibaba.android.arouter.launcher.ARouter
 import com.blankj.utilcode.util.AppUtils

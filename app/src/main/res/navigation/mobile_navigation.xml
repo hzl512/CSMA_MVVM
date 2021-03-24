@@ -13,19 +13,19 @@
 
     <fragment
         android:id="@+id/navigation_category"
-        android:name="com.mason.cmsa.ui.category.CategoryFragment"
+        android:name="com.mason.csma.category.frags.CategoryFragment"
         android:label="@string/title_category"
         tools:layout="@layout/fragment_category" />
 
     <fragment
         android:id="@+id/navigation_buying"
-        android:name="com.mason.cmsa.ui.buying.BuyingFragment"
+        android:name="com.mason.csma.buying.frags.BuyingFragment"
         android:label="@string/title_buying"
         tools:layout="@layout/fragment_buying" />
 
     <fragment
         android:id="@+id/navigation_mine"
-        android:name="com.mason.cmsa.ui.mine.MineFragment"
+        android:name="com.mason.csma.mine.frags.MineFragment"
         android:label="@string/title_mine"
         tools:layout="@layout/fragment_mine" />
 </navigation>

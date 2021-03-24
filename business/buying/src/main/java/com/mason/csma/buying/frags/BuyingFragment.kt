@@ -1,4 +1,4 @@
-package com.mason.cmsa.ui.buying
+package com.mason.csma.buying.frags
 
 import android.os.Bundle
 import android.view.*
@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.imyyq.mvvm.utils.ToastUtil
-import com.mason.cmsa.R
+import com.mason.csma.buying.R
 
 class BuyingFragment : Fragment() {
 

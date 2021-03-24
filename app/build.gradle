@@ -90,6 +90,9 @@ dependencies {
     implementation Deps.bindingAdapterVp2
 
     implementation project(path: ':home')
+    implementation project(path: ':category')
+    implementation project(path: ':buying')
+    implementation project(path: ':mine')
 
     // 源码方式引用框架
     implementation project(path: ':MVVMArchitecture')
