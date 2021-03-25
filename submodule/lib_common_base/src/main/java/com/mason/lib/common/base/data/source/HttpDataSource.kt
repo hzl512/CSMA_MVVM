@@ -1,9 +1,14 @@
 package com.mason.lib.common.base.source
 
 import com.mason.lib.common.base.entity.BaseEntity
-import com.mason.lib.common.base.entity.FriendWebSiteEntity
+import com.mason.lib.common.base.entity.Commodity
+import com.mason.lib.common.base.entity.User
+import okhttp3.RequestBody
 
 interface HttpDataSource {
-    // wanandroid 的开发 api 模拟登录 https://www.wanandroid.com/
-    suspend fun login(userName: String, pwd: String): BaseEntity<List<FriendWebSiteEntity?>?>?
+
+    suspend fun login(userName: String, pwd: String): BaseEntity<List<User?>?>?
+
+    suspend fun commodityServlet(requestBody: RequestBody): BaseEntity<List<Commodity?>?>?
+
 }

@@ -4,14 +4,15 @@ import com.imyyq.mvvm.base.IBaseResponse
 
 data class BaseEntity<T>(
     var data: T?,
-    var errorCode: Int?,
-    var errorMsg: String?
+    var errorcode: Int?,
+    var errormsg: String?,
+    var total: Int?
 ) : IBaseResponse<T> {
-    override fun code() = errorCode
+    override fun code() = errorcode
 
-    override fun msg() = errorMsg
+    override fun msg() = errormsg
 
     override fun data() = data
 
-    override fun isSuccess() = errorCode == 0
+    override fun isSuccess() = errorcode == 0
 }
