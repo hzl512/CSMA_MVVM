@@ -1,4 +1,4 @@
-package com.mason.cmsa
+package com.mason.lib.common.base.app
 
 import com.alibaba.android.arouter.launcher.ARouter
 import com.blankj.utilcode.util.AppUtils
@@ -6,9 +6,11 @@ import com.imyyq.mvvm.app.AppStateTracker
 import com.imyyq.mvvm.app.BaseApp
 import com.imyyq.mvvm.app.GlobalConfig
 import com.imyyq.mvvm.http.HttpRequest
-import com.imyyq.mvvm.utils.AppUtil
 import com.imyyq.mvvm.utils.LogUtil
-import com.mason.cmsa.R
+import com.mason.lib.common.base.R
+import com.mason.lib.common.base.loadsir.EmptyCallback
+import com.mason.lib.common.base.loadsir.ErrorCallback
+import com.mason.lib.common.base.loadsir.LoadingCallback
 
 class MyApp : BaseApp() {
     /**
@@ -36,11 +38,11 @@ class MyApp : BaseApp() {
         HttpRequest.mDefaultBaseUrl = "http://pc-huangzonglei.nflg:8090/CampusSecondaryMarket/"
 
         // 初始化 LoadSir，内嵌加载中第三方库，框架对其进行了二次封装
-//        GlobalConfig.initLoadSir(
-//            LoadingCallback::class.java,
-//            EmptyCallback::class.java,
-//            Camera.ErrorCallback::class.java
-//        )
+        GlobalConfig.initLoadSir(
+            LoadingCallback::class.java,
+            EmptyCallback::class.java,
+            ErrorCallback::class.java
+        )
 
         // 是否支持点击事件间隔一定时间，可局部设置
         GlobalConfig.Click.gIsClickInterval = true
@@ -66,8 +68,7 @@ class MyApp : BaseApp() {
         GlobalConfig.LoadingDialog.gLoadingDialogCancelable = true
         // 对话框是否可点击外部区域取消
         GlobalConfig.LoadingDialog.gLoadingDialogCanceledOnTouchOutside = true
-//        GlobalConfig.gLoadingDialogLayout = true
-//        GlobalConfig.gLoadingDialogLayoutMsgId = true
+
         // 让 beta 构建时，保存 log 到本地的，如果不需要可以设置为 false，建议提测时设置为 true，release 和 debug 时设置为 false
 //        GlobalConfig.gIsSaveLog = BuildConfig.BUILD_TYPE.equals("beta")
 
@@ -75,7 +76,7 @@ class MyApp : BaseApp() {
         GlobalConfig.ImageView.placeholderRes = R.drawable.ic_launcher_background
         GlobalConfig.ImageView.errorRes = R.drawable.ic_launcher_background
 
-//        GlobalConfig.AppBar.gAppBarLayoutId = R.layout.layout_common_app_bar
+        GlobalConfig.AppBar.gAppBarLayoutId = R.layout.layout_common_app_bar
 
         // 可追踪应用的状态是在前台还是后台，注意：锁屏也是后台。
         AppStateTracker.track(object : AppStateTracker.AppStateChangeListener {
