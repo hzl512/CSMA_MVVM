@@ -9,7 +9,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.mason.cmsa"
+        applicationId "com.mason.csma"
         minSdkVersion SysConfig.minSdkVersion
         targetSdkVersion SysConfig.targetSdkVersion
         versionCode 1
