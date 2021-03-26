@@ -2,31 +2,19 @@ package com.mason.csma.buying.frags
 
 import android.os.Bundle
 import android.view.*
-import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import com.imyyq.mvvm.base.DataBindingBaseFragment
 import com.imyyq.mvvm.utils.ToastUtil
 import com.mason.csma.buying.R
+import com.mason.csma.buying.databinding.FragmentBuyingBinding
+import kotlinx.android.synthetic.main.fragment_buying.*
 
-class BuyingFragment : Fragment() {
+class BuyingFragment :
+    DataBindingBaseFragment<FragmentBuyingBinding, BuyingViewModel>(R.layout.fragment_buying) {
 
-    private lateinit var buyingViewModel: BuyingViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        buyingViewModel =
-            ViewModelProviders.of(this).get(BuyingViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_buying, container, false)
-        val textView: TextView = root.findViewById(R.id.text_notifications)
-        buyingViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-        return root
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -41,6 +29,21 @@ class BuyingFragment : Fragment() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    /**
+     * 初始化的第二个方法
+     *
+     * 这个方法是用来绑定 vm 中的响应式变量到界面中的，通常是 LiveData，事件监听等。
+     *
+     * 此时 mViewModel 和 mBinding 已实例化。
+     */
+    override fun initViewObservable() {
+        // mBinding 是 layout 文件的绑定类，包含了声明了 id 的所有 view 的引用。这里就是对应 R.layout.activity_main
+        // mViewModel 是界面关联的主 VM 的实例，由继承 DataBindingBaseActivity 时的泛型参数决定，这里是 MainViewModel。
+        mViewModel.liveData.observe(viewLifecycleOwner, Observer {
+            text_buying.text = it.toString()
+        })
     }
 
 }

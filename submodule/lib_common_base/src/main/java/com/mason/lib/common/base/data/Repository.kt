@@ -28,6 +28,10 @@ class Repository :
         return httpDataSource.categoryServlet(requestBody)
     }
 
+    override suspend fun buysServlet(requestBody: RequestBody): BaseEntity<List<Buys?>?>? {
+        return httpDataSource.buysServlet(requestBody)
+    }
+
     override fun saveUserName(userName: String?) {
     }
 

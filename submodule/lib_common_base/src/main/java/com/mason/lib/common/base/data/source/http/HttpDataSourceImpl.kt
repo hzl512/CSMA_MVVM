@@ -23,4 +23,8 @@ object HttpDataSourceImpl : HttpDataSource {
         return apiService.categoryServlet(requestBody)
     }
 
+    override suspend fun buysServlet(requestBody: RequestBody): BaseEntity<List<Buys?>?>? {
+        return apiService.buysServlet(requestBody)
+    }
+
 }

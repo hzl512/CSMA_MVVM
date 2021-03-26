@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.lifecycle.Observer
 import com.imyyq.mvvm.base.DataBindingBaseFragment
-import com.imyyq.mvvm.utils.LogUtil
 import com.imyyq.mvvm.utils.ToastUtil
-import com.kingja.loadsir.callback.Callback
 import com.mason.csma.home.R
 import com.mason.csma.home.databinding.FragmentHomeBinding
 import kotlinx.android.synthetic.main.fragment_home.*

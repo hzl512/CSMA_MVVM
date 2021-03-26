@@ -1,9 +1,6 @@
 package com.mason.lib.common.base.data.source.http.service
 
-import com.mason.lib.common.base.entity.BaseEntity
-import com.mason.lib.common.base.entity.Category
-import com.mason.lib.common.base.entity.Commodity
-import com.mason.lib.common.base.entity.User
+import com.mason.lib.common.base.entity.*
 import okhttp3.RequestBody
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -23,5 +20,8 @@ interface CSMAApiService {
 
     @POST("CategoryServlet?action=4")
     suspend fun categoryServlet(@Body requestBody: RequestBody): BaseEntity<List<Category?>?>?
+
+    @POST("BuysServlet?action=4")
+    suspend fun buysServlet(@Body requestBody: RequestBody): BaseEntity<List<Buys?>?>?
 
 }
