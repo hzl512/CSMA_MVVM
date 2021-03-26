@@ -1,6 +1,7 @@
 package com.mason.lib.common.base.data.source.http.service
 
 import com.mason.lib.common.base.entity.BaseEntity
+import com.mason.lib.common.base.entity.Category
 import com.mason.lib.common.base.entity.Commodity
 import com.mason.lib.common.base.entity.User
 import okhttp3.RequestBody
@@ -19,5 +20,8 @@ interface CSMAApiService {
 
     @POST("CommodityServlet?action=4")
     suspend fun commodityServlet(@Body requestBody: RequestBody): BaseEntity<List<Commodity?>?>?
+
+    @POST("CategoryServlet?action=4")
+    suspend fun categoryServlet(@Body requestBody: RequestBody): BaseEntity<List<Category?>?>?
 
 }

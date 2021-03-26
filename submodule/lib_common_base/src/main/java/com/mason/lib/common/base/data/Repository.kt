@@ -2,10 +2,7 @@ package com.mason.lib.common.base.data
 
 import com.imyyq.mvvm.base.BaseModel
 import com.mason.lib.common.base.data.source.http.HttpDataSourceImpl
-import com.mason.lib.common.base.entity.BaseEntity
-import com.mason.lib.common.base.entity.Commodity
-import com.mason.lib.common.base.entity.FriendWebSiteEntity
-import com.mason.lib.common.base.entity.User
+import com.mason.lib.common.base.entity.*
 import com.mason.lib.common.base.source.HttpDataSource
 import com.mason.lib.common.base.source.LocalDataSource
 import com.mason.lib.common.base.source.local.LocalDataSourceImpl
@@ -25,6 +22,10 @@ class Repository :
 
     override suspend fun commodityServlet(requestBody: RequestBody): BaseEntity<List<Commodity?>?>? {
         return httpDataSource.commodityServlet(requestBody)
+    }
+
+    override suspend fun categoryServlet(requestBody: RequestBody): BaseEntity<List<Category?>?>? {
+        return httpDataSource.categoryServlet(requestBody)
     }
 
     override fun saveUserName(userName: String?) {

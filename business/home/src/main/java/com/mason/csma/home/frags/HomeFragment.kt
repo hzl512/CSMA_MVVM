@@ -48,7 +48,7 @@ class HomeFragment :
     override fun initViewObservable() {
         // mBinding 是 layout 文件的绑定类，包含了声明了 id 的所有 view 的引用。这里就是对应 R.layout.activity_main
         // mViewModel 是界面关联的主 VM 的实例，由继承 DataBindingBaseActivity 时的泛型参数决定，这里是 MainViewModel。
-        mViewModel.liveData.observe(this, Observer {
+        mViewModel.liveData.observe(viewLifecycleOwner, Observer {
             text_home.text = it.toString()
         })
     }
