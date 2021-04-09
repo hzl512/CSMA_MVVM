@@ -25,8 +25,9 @@ MVVM的架构来自：https://github.com/imyyq-star/MVVMArchitecture
 
 其作者讲解框架的一些资料：
 
-[MVVMArchitecture，一款可配置的 MVVM 框架]: https://juejin.cn/post/6854573214060789774
-[DataBinding，让人又爱又恨的一]: https://juejin.cn/post/6857815150565687303
+[MVVMArchitecture，一款可配置的 MVVM 框架](https://juejin.cn/post/6854573214060789774)
+
+[DataBinding，让人又爱又恨的一个框架](https://juejin.cn/post/6857815150565687303)
 
 
 
