@@ -15,9 +15,11 @@
 
 #### 效果图（deving...）
 
-<img src="https://gitee.com/Android_InSide/csma-mvvm/raw/master/images/home.png" style="zoom: 40%;" />
+**看不到图，请跳转到**[gitee地址](https://gitee.com/common-source-code/csma-mvvm.git)
 
-<img src="https://gitee.com/Android_InSide/csma-mvvm/raw/master/images/category.png" style="zoom: 40%;" />
+<img src="./images/home.png" style="zoom: 40%;" />
+
+<img src="./images/category.png" style="zoom: 40%;" />
 
 #### 引用资料
 
