@@ -10,28 +10,29 @@
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
+1.  安卓端不必说了；
+2.  服务端用的是mysql+myeclipse，数据库在代码里面；
 
-#### 使用说明
+#### 效果图（deving...）
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+<img src="./images/home.png" style="zoom: 40%;" />
 
-#### 参与贡献
+<img src="./images/category.png" style="zoom: 40%;" />
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+#### 引用资料
+
+MVVM的架构来自：https://github.com/imyyq-star/MVVMArchitecture
+
+其作者讲解框架的一些资料：
+
+[MVVMArchitecture，一款可配置的 MVVM 框架]: https://juejin.cn/post/6854573214060789774
+[DataBinding，让人又爱又恨的一]: https://juejin.cn/post/6857815150565687303
 
 
-#### 特技
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+
+#### 特点
+
+1. MVVM架构
+2. 阿里Arouter组件化
+
