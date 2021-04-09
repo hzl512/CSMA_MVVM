@@ -15,6 +15,8 @@
 
 #### 效果图（deving...）
 
+**看不到图，请跳转到**[gitee地址](https://gitee.com/common-source-code/csma-mvvm.git)
+
 <img src="./images/home.png" style="zoom: 40%;" />
 
 <img src="./images/category.png" style="zoom: 40%;" />
