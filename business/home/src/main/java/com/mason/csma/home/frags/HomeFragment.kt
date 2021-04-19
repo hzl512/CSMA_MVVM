@@ -2,10 +2,10 @@ package com.mason.csma.home.frags
 
 import android.os.Bundle
 import android.view.*
-import androidx.lifecycle.Observer
 import com.imyyq.mvvm.base.DataBindingBaseFragment
 import com.imyyq.mvvm.utils.ToastUtil
 import com.mason.csma.home.R
+import com.mason.csma.home.BR
 import com.mason.csma.home.databinding.FragmentHomeBinding
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
  * https://juejin.cn/post/6857815150565687303/#heading-1
  */
 class HomeFragment :
-    DataBindingBaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home) {
+    DataBindingBaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home, BR.viewModel) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +35,6 @@ class HomeFragment :
         return super.onOptionsItemSelected(item)
     }
 
-
     /**
      * 初始化的第二个方法
      *
@@ -46,9 +45,10 @@ class HomeFragment :
     override fun initViewObservable() {
         // mBinding 是 layout 文件的绑定类，包含了声明了 id 的所有 view 的引用。这里就是对应 R.layout.activity_main
         // mViewModel 是界面关联的主 VM 的实例，由继承 DataBindingBaseActivity 时的泛型参数决定，这里是 MainViewModel。
-        mViewModel.liveData.observe(viewLifecycleOwner, Observer {
-            text_home.text = it.toString()
-        })
+//        mViewModel.liveData.observe(viewLifecycleOwner, Observer {
+//            text_home.text = it.toString()
+//        })
+
     }
 
 
