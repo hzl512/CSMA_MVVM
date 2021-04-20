@@ -9,12 +9,14 @@ import androidx.lifecycle.MutableLiveData
 import com.blankj.utilcode.util.GsonUtils
 import com.blankj.utilcode.util.MapUtils
 import com.imyyq.mvvm.base.BaseViewModel
+import com.imyyq.mvvm.binding.command.BindingConsumer
 import com.imyyq.mvvm.utils.LogUtil
 import com.mason.csma.home.R
 import com.mason.csma.home.BR
 import com.mason.lib.common.base.data.Repository
 import com.mason.lib.common.base.entity.Buys
 import com.mason.lib.common.base.entity.Commodity
+import com.scwang.smart.refresh.layout.api.RefreshLayout
 import okhttp3.MediaType
 import kotlinx.coroutines.delay
 import me.tatarka.bindingcollectionadapter2.itembindings.OnItemBindClass
@@ -28,22 +30,41 @@ class HomeViewModel(app: Application) : BaseViewModel<Repository>(app) {
 
     val observableList = ObservableArrayList<Any>()
 
+    var no = 1
+
     override fun onResume(owner: LifecycleOwner) {
         super.onResume(owner)
-
         // 使用 vm 的协程，可以在界面销毁时自动取消该协程
         showLoadingDialog()
+        no = 1
+        onRefresh(no, null)
+    }
 
+    val onRefresh = BindingConsumer<RefreshLayout> {
+        it.finishRefresh(1000)
+        observableList.clear()
+        LogUtil.e("SmartRefresh", "onRefresh")
+        no = 1
+        onRefresh(no, it)
+    }
+
+    val onLoadMore = BindingConsumer<RefreshLayout> {
+        LogUtil.e("SmartRefresh", "onLoadMore")
+        it.finishLoadMore()
+        no++
+        onRefresh(no, it)
+    }
+
+    fun onRefresh(no: Int, refreshLayout: RefreshLayout?) {
         launch({
-            delay(2000)
             mModel.commodityServlet(
                 RequestBody.create(
                     MediaType.parse("application/json"),
                     GsonUtils.toJson(
                         MapUtils.newHashMap(
                             Pair("paging", "true"),
-                            Pair("page_no", "1"),
-                            Pair("page_size", "10")
+                            Pair("page_no", no.toString()),
+                            Pair("page_size", "6")
                         )
                     )
                 )
@@ -55,6 +76,9 @@ class HomeViewModel(app: Application) : BaseViewModel<Repository>(app) {
             onResult = {
                 LogUtil.i("NetworkViewModel", "commonLog - onResult: ${it.size}")
 //                liveData.value = it
+                if (no > 0 && it.size < 6) {
+                    refreshLayout?.setNoMoreData(true)
+                }
                 ///
                 for (c in it) {
                     observableList.add(RvItemViewModel(this, c!!))
@@ -72,6 +96,5 @@ class HomeViewModel(app: Application) : BaseViewModel<Repository>(app) {
     val multipleItems = OnItemBindClass<Any>().apply {
         map<RvItemViewModel>(BR.viewModel, R.layout.home_gird_item_commodity)
     }
-
 
 }

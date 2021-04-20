@@ -35,6 +35,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/white"
+            app:onLoadMore="@{viewModel.onLoadMore}"
+            app:onRefresh="@{viewModel.onRefresh}"
             app:srlAccentColor="@android:color/white"
             app:srlEnablePreviewInEditMode="true"
             app:srlPrimaryColor="#444444">
@@ -44,7 +46,6 @@
                 android:layout_height="wrap_content" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:itemBinding="@{viewModel.multipleItems}"
@@ -54,7 +55,7 @@
 
             <com.scwang.smart.refresh.footer.ClassicsFooter
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
         </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 
