@@ -1,6 +1,7 @@
 package com.mason.csma.home.frags
 
 import com.imyyq.mvvm.base.MultiItemViewModel
+import com.imyyq.mvvm.http.HttpRequest
 import com.mason.lib.common.base.entity.Commodity
 
 /**
@@ -11,6 +12,6 @@ import com.mason.lib.common.base.entity.Commodity
 class RvItemViewModel(viewModel: HomeViewModel, val item: Commodity) :
     MultiItemViewModel<HomeViewModel>(viewModel) {
 
-
+    val url = HttpRequest.mDefaultBaseUrl + item.commodityImageUrl
 
 }

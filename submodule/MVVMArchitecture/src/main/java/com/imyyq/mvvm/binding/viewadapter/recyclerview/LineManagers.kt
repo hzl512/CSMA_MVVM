@@ -12,6 +12,7 @@ object LineManagers {
         return BindingFunction {
             DividerLine(
                 it.context,
+                10,
                 DividerLine.LINE_BOTH
             )
         }
