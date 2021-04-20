@@ -41,22 +41,24 @@ class HomeViewModel(app: Application) : BaseViewModel<Repository>(app) {
     }
 
     val onRefresh = BindingConsumer<RefreshLayout> {
-        it.finishRefresh(1000)
         observableList.clear()
         LogUtil.e("SmartRefresh", "onRefresh")
         no = 1
         onRefresh(no, it)
+        it.finishRefresh(1000)
     }
 
     val onLoadMore = BindingConsumer<RefreshLayout> {
         LogUtil.e("SmartRefresh", "onLoadMore")
-        it.finishLoadMore()
         no++
         onRefresh(no, it)
     }
 
     fun onRefresh(no: Int, refreshLayout: RefreshLayout?) {
         launch({
+            if (refreshLayout == null) {
+                delay(2000)
+            }
             mModel.commodityServlet(
                 RequestBody.create(
                     MediaType.parse("application/json"),
@@ -76,12 +78,13 @@ class HomeViewModel(app: Application) : BaseViewModel<Repository>(app) {
             onResult = {
                 LogUtil.i("NetworkViewModel", "commonLog - onResult: ${it.size}")
 //                liveData.value = it
-                if (no > 1 && it.size < 6) {
-                    refreshLayout?.setNoMoreData(true)
-                }
-                ///
                 for (c in it) {
                     observableList.add(RvItemViewModel(this, c!!))
+                }
+                if (no > 1 && it.size < 6) {
+                    refreshLayout?.setNoMoreData(true)
+                }else{
+                    refreshLayout?.finishLoadMore()
                 }
             },
             onFailed = { code, msg ->
