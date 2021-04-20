@@ -55,7 +55,8 @@ class DividerLine(context: Context) : ItemDecoration() {
                 drawHorizontal(c, parent, state)
                 drawVertical(c, parent, state)
             }
-            else -> throw IllegalStateException("Unexpected value: $mMode")
+            ///暂时不需要，后续可能删除
+//            else -> throw IllegalStateException("Unexpected value: $mMode")
         }
     }
 

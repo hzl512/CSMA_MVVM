@@ -7,6 +7,14 @@ import com.imyyq.mvvm.binding.command.BindingFunction
  * RecyclerView 分割线
  */
 object LineManagers {
+
+    @JvmStatic
+    fun both2(space: Int): BindingFunction<RecyclerView, RecyclerView.ItemDecoration> {
+        return BindingFunction {
+            RecyViewItemDecoration(space, space, space, space)
+        }
+    }
+
     @JvmStatic
     fun both(): BindingFunction<RecyclerView, RecyclerView.ItemDecoration> {
         return BindingFunction {

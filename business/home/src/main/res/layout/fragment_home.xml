@@ -37,7 +37,7 @@
             app:itemBinding="@{viewModel.multipleItems}"
             app:items="@{viewModel.observableList}"
             app:layoutManager="@{LayoutManagers.verticalGrid(2)}"
-            app:lineManager="@{LineManagers.both()}" />
+            app:lineManager="@{LineManagers.both2(5)}" />
 
     </LinearLayout>
 
