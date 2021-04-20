@@ -76,7 +76,7 @@ class HomeViewModel(app: Application) : BaseViewModel<Repository>(app) {
             onResult = {
                 LogUtil.i("NetworkViewModel", "commonLog - onResult: ${it.size}")
 //                liveData.value = it
-                if (no > 0 && it.size < 6) {
+                if (no > 1 && it.size < 6) {
                     refreshLayout?.setNoMoreData(true)
                 }
                 ///
