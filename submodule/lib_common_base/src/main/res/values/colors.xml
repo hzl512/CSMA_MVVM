@@ -2,4 +2,5 @@
 <resources>
     <color name="white">#ffffff</color>
     <color name="common_base_list_bg">#F6F7E4</color>
+    <color name="common_base_line1">#FF5001</color>
 </resources>
