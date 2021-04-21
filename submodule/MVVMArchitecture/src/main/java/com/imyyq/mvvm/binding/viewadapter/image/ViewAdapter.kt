@@ -1,5 +1,6 @@
 package com.imyyq.mvvm.binding.viewadapter.image
 
+import android.R
 import android.annotation.SuppressLint
 import android.graphics.drawable.Drawable
 import android.text.TextUtils
@@ -8,6 +9,7 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.imyyq.mvvm.app.GlobalConfig
+
 
 @SuppressLint("CheckResult")
 @BindingAdapter(value = ["url", "placeholderRes", "errorRes"], requireAll = false)
@@ -39,4 +41,9 @@ fun setImageUri(
     } else {
         imageView.setImageResource(0)
     }
+}
+
+@BindingAdapter(value = ["resID"], requireAll = false)
+fun setImageResource(imageView: ImageView, resID: Int){
+    imageView.setImageResource(resID)
 }
