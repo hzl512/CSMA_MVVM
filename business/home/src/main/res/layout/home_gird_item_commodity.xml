@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.mason.csma.home.frags.RvItemViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:padding="2dip"
+            android:scaleType="fitXY"
+            app:url="@{viewModel.url}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text="@{viewModel.item.commodityName}"
+            android:textColor="#000000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text="@{viewModel.item.usersProfessionNameGrade}"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/textCommodityPrice"
+                android:drawableLeft="@mipmap/home_feed_location"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:text="@{viewModel.item.commodityAddress}"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textCommodityPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:text="@{viewModel.item.commodityPrice}"
+                android:textColor="#000000" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>
