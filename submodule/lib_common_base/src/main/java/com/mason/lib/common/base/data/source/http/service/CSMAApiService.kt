@@ -21,7 +21,7 @@ interface CSMAApiService {
     @POST("CategoryServlet?action=4")
     suspend fun categoryServlet(@Body requestBody: RequestBody): BaseEntity<List<Category?>?>?
 
-    @POST("BuysServlet?action=4")
+    @POST("BuysServlet?action=6")
     suspend fun buysServlet(@Body requestBody: RequestBody): BaseEntity<List<Buys?>?>?
 
 }
