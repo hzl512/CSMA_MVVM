@@ -6,6 +6,7 @@ import androidx.databinding.ObservableArrayList
 import androidx.lifecycle.LifecycleOwner
 import com.blankj.utilcode.util.GsonUtils
 import com.blankj.utilcode.util.MapUtils
+import com.blankj.utilcode.util.ToastUtils
 import com.imyyq.mvvm.base.BaseViewModel
 import com.imyyq.mvvm.binding.command.BindingConsumer
 import com.imyyq.mvvm.utils.LogUtil
@@ -101,7 +102,7 @@ class HomeViewModel(app: Application) : BaseViewModel<Repository>(app) {
 
     val listener = object : OnItemClickListener {
         override fun onItemClick(item: String?) {
-            LogUtil.e("SmartRefresh", item)
+            ToastUtils.showLong(item)
         }
     }
 
