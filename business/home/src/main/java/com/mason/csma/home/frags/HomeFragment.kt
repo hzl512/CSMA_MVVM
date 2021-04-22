@@ -38,6 +38,11 @@ class HomeFragment :
         return super.onOptionsItemSelected(item)
     }
 
+    override fun initData() {
+        super.initData()
+        mViewModel.onFirstReq()
+    }
+
     /**
      * 初始化的第二个方法
      *

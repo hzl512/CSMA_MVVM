@@ -35,6 +35,11 @@ class BuyingFragment :
         return super.onOptionsItemSelected(item)
     }
 
+    override fun initData() {
+        super.initData()
+        mViewModel.firstReq()
+    }
+
     /**
      * 初始化的第二个方法
      *
