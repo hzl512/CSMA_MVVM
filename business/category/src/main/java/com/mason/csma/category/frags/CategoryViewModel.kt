@@ -25,11 +25,11 @@ class CategoryViewModel (app: Application) : BaseViewModel<Repository>(app) {
     val observableList = ObservableArrayList<Any>()
 
     var no = 1
-    override fun onStart(owner: LifecycleOwner) {
-        super.onStart(owner)
-        observableList.clear()
+
+    fun onFirstReq(){
         // 使用 vm 的协程，可以在界面销毁时自动取消该协程
         showLoadingDialog()
+        observableList.clear()
         no = 1
         request(no, null)
     }

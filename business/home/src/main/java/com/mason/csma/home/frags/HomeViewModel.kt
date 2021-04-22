@@ -32,13 +32,16 @@ class HomeViewModel(app: Application) : BaseViewModel<Repository>(app) {
 
     var no = 1
 
-    override fun onResume(owner: LifecycleOwner) {
-        super.onResume(owner)
+    fun onFirstReq(){
         // 使用 vm 的协程，可以在界面销毁时自动取消该协程
         showLoadingDialog()
         observableList.clear()
         no = 1
         request(no, null)
+    }
+
+    override fun onResume(owner: LifecycleOwner) {
+        super.onResume(owner)
     }
 
     val onRefresh = BindingConsumer<RefreshLayout> {

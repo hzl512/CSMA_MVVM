@@ -1,16 +1,19 @@
 package com.mason.csma.category.frags
 
-import androidx.lifecycle.Observer
 import com.imyyq.mvvm.base.DataBindingBaseFragment
 import com.mason.csma.category.BR
 import com.mason.csma.category.R
 import com.mason.csma.category.databinding.FragmentCategoryBinding
-import kotlinx.android.synthetic.main.fragment_category.*
 
 class CategoryFragment : DataBindingBaseFragment<FragmentCategoryBinding, CategoryViewModel>(
     R.layout.fragment_category,
     BR.viewModel
 ) {
+
+    override fun initData() {
+        super.initData()
+        mViewModel.onFirstReq()
+    }
 
     /**
      * 初始化的第二个方法
