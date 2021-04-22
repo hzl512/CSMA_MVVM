@@ -6,11 +6,15 @@ import androidx.lifecycle.Observer
 import com.imyyq.mvvm.base.DataBindingBaseFragment
 import com.imyyq.mvvm.utils.ToastUtil
 import com.mason.csma.buying.R
+import com.mason.csma.buying.BR
 import com.mason.csma.buying.databinding.FragmentBuyingBinding
 import kotlinx.android.synthetic.main.fragment_buying.*
 
 class BuyingFragment :
-    DataBindingBaseFragment<FragmentBuyingBinding, BuyingViewModel>(R.layout.fragment_buying) {
+    DataBindingBaseFragment<FragmentBuyingBinding, BuyingViewModel>(
+        R.layout.fragment_buying,
+        BR.viewModel
+    ) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,9 +45,9 @@ class BuyingFragment :
     override fun initViewObservable() {
         // mBinding 是 layout 文件的绑定类，包含了声明了 id 的所有 view 的引用。这里就是对应 R.layout.activity_main
         // mViewModel 是界面关联的主 VM 的实例，由继承 DataBindingBaseActivity 时的泛型参数决定，这里是 MainViewModel。
-        mViewModel.liveData.observe(viewLifecycleOwner, Observer {
-            text_buying.text = it.toString()
-        })
+//        mViewModel.liveData.observe(viewLifecycleOwner, Observer {
+//            text_buying.text = it.toString()
+//        })
     }
 
 }

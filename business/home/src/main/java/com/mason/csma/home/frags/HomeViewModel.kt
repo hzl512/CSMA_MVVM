@@ -4,24 +4,24 @@ import android.app.Application
 import android.util.Pair
 import androidx.databinding.ObservableArrayList
 import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.blankj.utilcode.util.GsonUtils
 import com.blankj.utilcode.util.MapUtils
+import com.blankj.utilcode.util.ToastUtils
 import com.imyyq.mvvm.base.BaseViewModel
 import com.imyyq.mvvm.binding.command.BindingConsumer
 import com.imyyq.mvvm.utils.LogUtil
-import com.mason.csma.home.R
 import com.mason.csma.home.BR
+import com.mason.csma.home.R
 import com.mason.lib.common.base.data.Repository
-import com.mason.lib.common.base.entity.Buys
-import com.mason.lib.common.base.entity.Commodity
 import com.scwang.smart.refresh.layout.api.RefreshLayout
-import okhttp3.MediaType
 import kotlinx.coroutines.delay
+import me.tatarka.bindingcollectionadapter2.ItemBinding
 import me.tatarka.bindingcollectionadapter2.itembindings.OnItemBindClass
 import me.tatarka.bindingcollectionadapter2.map
+import me.tatarka.bindingcollectionadapter2.toItemBinding
+import me.tatarka.bindingcollectionadapter2.itemBindingOf
 
+import okhttp3.MediaType
 import okhttp3.RequestBody
 
 class HomeViewModel(app: Application) : BaseViewModel<Repository>(app) {
@@ -37,24 +37,24 @@ class HomeViewModel(app: Application) : BaseViewModel<Repository>(app) {
         // 使用 vm 的协程，可以在界面销毁时自动取消该协程
         showLoadingDialog()
         no = 1
-        onRefresh(no, null)
+        request(no, null)
     }
 
     val onRefresh = BindingConsumer<RefreshLayout> {
         observableList.clear()
         LogUtil.e("SmartRefresh", "onRefresh")
         no = 1
-        onRefresh(no, it)
+        request(no, it)
         it.finishRefresh(1000)
     }
 
     val onLoadMore = BindingConsumer<RefreshLayout> {
         LogUtil.e("SmartRefresh", "onLoadMore")
         no++
-        onRefresh(no, it)
+        request(no, it)
     }
 
-    fun onRefresh(no: Int, refreshLayout: RefreshLayout?) {
+    private fun request(no: Int, refreshLayout: RefreshLayout?) {
         launch({
             if (refreshLayout == null) {
                 delay(2000)
@@ -83,7 +83,7 @@ class HomeViewModel(app: Application) : BaseViewModel<Repository>(app) {
                 }
                 if (no > 1 && it.size < 6) {
                     refreshLayout?.setNoMoreData(true)
-                }else{
+                } else {
                     refreshLayout?.finishLoadMore()
                 }
             },
@@ -96,8 +96,21 @@ class HomeViewModel(app: Application) : BaseViewModel<Repository>(app) {
         )
     }
 
-    val multipleItems = OnItemBindClass<Any>().apply {
-        map<RvItemViewModel>(BR.viewModel, R.layout.home_gird_item_commodity)
+    interface OnItemClickListener {
+        fun onItemClick(item: String?)
     }
+
+    val listener = object : OnItemClickListener {
+        override fun onItemClick(item: String?) {
+            ToastUtils.showLong(item)
+        }
+    }
+
+//    val multipleItems = OnItemBindClass<Any>().apply {
+//        map<RvItemViewModel>(BR.viewModel, R.layout.home_gird_item_commodity)
+//    }.toItemBinding().bindExtra(BR.listener, listener)
+
+    val items = itemBindingOf<Any>(BR.viewModel, R.layout.home_gird_item_commodity)
+        .bindExtra(BR.event, listener)
 
 }

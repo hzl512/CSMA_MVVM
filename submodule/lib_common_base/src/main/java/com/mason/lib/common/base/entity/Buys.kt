@@ -15,5 +15,5 @@ data class Buys(
     val buysQQ: Int,
     val buysStatus: Int,
     val id: Int,
-    val usersID: Int
+    val usersDetail: String
 )

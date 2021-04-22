@@ -4,6 +4,10 @@
     <data>
 
         <variable
+            name="event"
+            type="com.mason.csma.home.frags.HomeViewModel.OnItemClickListener" />
+
+        <variable
             name="viewModel"
             type="com.mason.csma.home.frags.RvItemViewModel" />
     </data>
@@ -12,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
+        android:onClick="@{()->event.onItemClick(viewModel.item.commodityName)}"
         android:orientation="vertical">
 
         <ImageView

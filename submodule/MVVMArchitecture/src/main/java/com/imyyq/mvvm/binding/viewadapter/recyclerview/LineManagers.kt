@@ -9,6 +9,13 @@ import com.imyyq.mvvm.binding.command.BindingFunction
 object LineManagers {
 
     @JvmStatic
+    fun both3(): BindingFunction<RecyclerView, RecyclerView.ItemDecoration> {
+        return BindingFunction {
+            RecyViewItemDecoration(5, 5, 5, 0)
+        }
+    }
+
+    @JvmStatic
     fun both2(space: Int): BindingFunction<RecyclerView, RecyclerView.ItemDecoration> {
         return BindingFunction {
             RecyViewItemDecoration(space, space, space, space)

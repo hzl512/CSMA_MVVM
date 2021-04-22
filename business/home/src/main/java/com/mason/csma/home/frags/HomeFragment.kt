@@ -14,7 +14,10 @@ import kotlinx.android.synthetic.main.fragment_home.*
  * https://juejin.cn/post/6857815150565687303/#heading-1
  */
 class HomeFragment :
-    DataBindingBaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home, BR.viewModel) {
+    DataBindingBaseFragment<FragmentHomeBinding, HomeViewModel>(
+        R.layout.fragment_home,
+        BR.viewModel
+    ) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +53,6 @@ class HomeFragment :
 //        })
 
     }
-
 
 
 }
