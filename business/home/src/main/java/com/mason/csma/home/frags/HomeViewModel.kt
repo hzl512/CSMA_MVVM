@@ -36,6 +36,7 @@ class HomeViewModel(app: Application) : BaseViewModel<Repository>(app) {
         super.onResume(owner)
         // 使用 vm 的协程，可以在界面销毁时自动取消该协程
         showLoadingDialog()
+        observableList.clear()
         no = 1
         request(no, null)
     }

@@ -30,7 +30,7 @@ class BuyingViewModel (app: Application) : BaseViewModel<Repository>(app) {
 
     override fun onStart(owner: LifecycleOwner) {
         super.onStart(owner)
-
+        observableList.clear()
         // 使用 vm 的协程，可以在界面销毁时自动取消该协程
         showLoadingDialog()
         no = 1
