@@ -110,11 +110,11 @@ class HomeViewModel(app: Application) : BaseViewModel<Repository>(app) {
         }
     }
 
-//    val multipleItems = OnItemBindClass<Any>().apply {
-//        map<RvItemViewModel>(BR.viewModel, R.layout.home_gird_item_commodity)
-//    }.toItemBinding().bindExtra(BR.listener, listener)
+    val multipleItems = OnItemBindClass<Any>().apply {
+        map<RvItemViewModel>(BR.viewModel, R.layout.home_gird_item_commodity)
+    }.toItemBinding().bindExtra(BR.event, listener)
 
-    val items = itemBindingOf<Any>(BR.viewModel, R.layout.home_gird_item_commodity)
-        .bindExtra(BR.event, listener)
+//    val items = itemBindingOf<Any>(BR.viewModel, R.layout.home_gird_item_commodity)
+//        .bindExtra(BR.event, listener)
 
 }
