@@ -5,13 +5,13 @@
 
 
 #### 软件架构
-软件架构说明
+MVVM+Arouter+DataBinding，喜欢给个赞哦~
 
 
 #### 安装教程
 
 1.  安卓端不必说了；
-2.  服务端用的是mysql+myeclipse，数据库在代码里面；
+2.  [服务端](https://github.com/hzl512/CampusSecondaryMarket)（[gitee地址](https://gitee.com/common-source-code/CampusSecondaryMarket)）用的是mysql+myeclipse，数据库在代码里面；
 
 #### 效果图（deving...）
 
